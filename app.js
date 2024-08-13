@@ -1,30 +1,55 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import logo from './logo.png';
 
-const heading9 = (
-    <h1 id="h1" key="1234">valhalla!</h1> // jsx -> html like syntax but not html inside js
+const Title = () => (
+    <a href="/">
+        <img 
+            className="logo"
+            alt="logo"
+            src= {logo}
+        />
+    </a>
 )
-const HeaderComponent = () => {
+const Header = () => {
     return (
         <>
-        {heading9}
-        <h1>Hey functional component!! </h1>
-        <HeaderFunction></HeaderFunction>
-        {console.log("can log console/js code with this in functional component!")}
-        {HeaderFunctionNoReturn()}
+            <div className="header">
+                <Title/>
+                    <div className="nav-items">
+                    <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contract</li>
+                    <li>Cart</li>
+                    </ul>
+                </div>
+            </div>
         </>
     ); 
 }
 
-const HeaderFunction = function() {
+const Body = () => (
+    <h1>Body</h1>
+)
+
+const Footer = function() {
     return (
-        <h1>Traditional function declaration in Js!</h1>
+        <h1>Footer</h1>
     )
  }
 
-const HeaderFunctionNoReturn = () => (
-    <h1>hey arrow function with no return statement!</h1>
-)
+const AppLayout = () => {
+    return (
+        <>
+            <Header/>
+            <Body/>
+            <Footer/>
+        </>
+    )
+}
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent/>);
+root.render(<AppLayout/>);
