@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logo from './logo.png';
+import { restaurantList } from "./mockData";
 
 const Title = () => (
     <a href="/">
@@ -29,9 +30,32 @@ const Header = () => {
     ); 
 }
 
-const Body = () => (
-    <h1>Body</h1>
-)
+//config driven UI
+
+const RestaurantCard = (props) => {
+
+    const {cloudinaryImageId, name, cuisines, lastMileTravelString} = props.data;
+    return (
+        <div className="card"> 
+            <img src ={cloudinaryImageId} />
+            <h2>{name}</h2>
+            <h3>{cuisines}</h3>
+            <h4>{lastMileTravelString}</h4>
+        </div>
+    )
+}
+
+
+
+const Body = () => {
+    return (
+        <div className="restaurant-list">
+            {restaurantList.map( restaurant => {
+                return <RestaurantCard {...restaurant}/>
+            })}
+        </div>
+    )
+}
 
 const Footer = function() {
     return (
