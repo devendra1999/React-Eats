@@ -1,29 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading2 = React.createElement(
-    "h2", 
-    { 
-        id: "title"
-    }, 
-    "Heading 1"
-)
-
-const heading = React.createElement(
-    "h1",
-    { 
-        id: "title1"
-    }, 
-    "Heading 2"
-);
-
-const container = React.createElement(
-    "div", 
-    { 
-        id: "container"
-    },
-    [ heading, heading2]
-);
+const heading9 = <h1 id="h1" key="1234">valhalla!</h1> // jsx -> html like syntax but not html inside js
 
 console.log(container);
 
