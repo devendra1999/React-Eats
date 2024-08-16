@@ -1,1 +1,1 @@
-![alt text](stage1.png)
+![alt text](./src/stageProgress/stage1.png)
