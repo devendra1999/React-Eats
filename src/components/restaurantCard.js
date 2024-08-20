@@ -1,5 +1,10 @@
 //config driven UI
-const RestaurantCard = ({cloudinaryImageId, name, cuisines, lastMileTravelString, slaString, costForTwoString} = RestaurantCard) => {
+const RestaurantCard = ({cloudinaryImageId, 
+                        name, 
+                        cuisines, 
+                        lastMileTravelString, 
+                        slaString, 
+                        costForTwoString } = RestaurantCard) => {
 
     return (
         <div className="card"> 
