@@ -49,8 +49,15 @@ body {
     transform: scale(1.1);
 }
 
+.search-container {
+    padding-top: 6rem;
+    padding-left: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .restaurant-list {
-    padding: 4rem;
+    padding: 1rem 4rem 4rem 4rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -60,12 +67,12 @@ body {
     width: 400px;
     padding: 10px;
     margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card > img {
@@ -73,7 +80,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 400px;
-    height: 200px;
+    max-height: 200px;
+    min-height: 200px;
     object-fit: cover ;
 }
 
