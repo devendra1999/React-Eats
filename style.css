@@ -1,29 +1,52 @@
-/* body {
-    background-color: #548687;
-    padding-left: 1rem;
-} */
+body {
+    font-family: Helvetica ;
+    font-weight: bold;
+}
 
 .header {
     display: flex;
     justify-content: space-between;
-    margin: 50px;
-    border: 1px solid #000000;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #fff;
+    z-index: 1000;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform .3s ease;
+    contain: size layout style;
+    padding: 0 20px;
 }
+
+.heading {
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: black;
+    text-shadow: 2px 2px #ffffff;
+    padding-left: 4rem;
+}
+.heading:hover {
+    transform: scale(1.1);
+    letter-spacing: 2px;
+  }
 
 .nav-items > ul {
     list-style-type: none;
     display: flex;
+    font-weight: lighter;
+    padding-right: 6rem;
 }
 
 .nav-items > ul > li {
     padding: 20px; 
 }
 
-.logo {
-    display: block;
-    max-width: 100px; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 10px;
+.nav-items > ul > li:hover {
+    transform: scale(1.1);
 }
 
 .restaurant-list {
@@ -41,6 +64,10 @@
     background-color: white;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
+
 .card > img {
     display: block;
     margin-left: auto;
@@ -48,4 +75,8 @@
     width: 400px;
     height: 200px;
     object-fit: cover ;
+}
+
+.footer {
+    
 }

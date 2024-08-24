@@ -1,12 +1,7 @@
-import logo from '../utils/logo.png'
 
 const Title = () => (
-    <a href="/">
-        <img 
-            className="logo"
-            alt="logo"
-            src= {logo}
-        />
+    <a href="/" className="heading">
+        <h1>React Eats</h1>
     </a>
 )
 const Header = () => {
@@ -16,9 +11,7 @@ const Header = () => {
                 <Title/>
                     <div className="nav-items">
                     <ul>
-                    <li>Home</li>
                     <li>About</li>
-                    <li>React-Eats Corporate</li>
                     <li>Help</li>
                     <li>Contract</li>
                     <li>Cart</li>
