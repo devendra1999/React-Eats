@@ -3,10 +3,13 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/header";
 import Body from "./components/body";
 import Footer from "./components/footer";
+import About from "./components/about"; 
+import Error from "./components/error";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const AppLayout = () => {
     return (
-        <>
+        <>   
             <Header/>
             <Body/>
             <Footer/>
@@ -14,7 +17,20 @@ const AppLayout = () => {
     )
 }
 
+// need to provide this appRouter to the app 
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout/>,
+        errorElement: <Error/>
+    },
+    {
+        path: "/about",
+        element: <About/>
+    }
+])
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+root.render(<RouterProvider router={appRouter}/>);
