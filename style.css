@@ -85,6 +85,10 @@ body {
     object-fit: cover ;
 }
 
+.shimmer {
+    padding-top: 5rem
+}
+
 .footer {
     
 }

@@ -1,6 +1,6 @@
 import RestaurantCard from "./restaurantCard";
-import { restaurantList } from "../utils/mockData";
 import { useState, useEffect } from "react";
+import Shimmer from './shimmer';
 
 function filterData(searchText, restaurants) {
     const filterData = restaurants.filter((restaurant) => {
@@ -12,14 +12,24 @@ function filterData(searchText, restaurants) {
 }
 
 const Body = () => {
-    const [restaurants, setRestaurants] = useState(restaurantList);
+    const [restaurants, setRestaurants] = useState([]);
     const [searchText, setSearchText] = useState('');
 
     useEffect(() =>{
-        
-    },[restaurants])
+        getRestaurantList();
+    },[])
 
-    return (
+    async function getRestaurantList () {
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+        const res = await data.json();
+        setRestaurants(res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // console.log(restaurants)
+        // console.log(res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    return restaurants?.length === 0 ? ( 
+        <Shimmer/> 
+    ): (
         <>
             <div className="search-container">
                 <input
@@ -44,12 +54,12 @@ const Body = () => {
             <div className="restaurant-list">
                 {restaurants.map(restaurant => {
                     return (
-                    <RestaurantCard {...restaurant.data} key = {restaurant.data.id}/>
+                    <RestaurantCard {...restaurant.info} key = {restaurant.info.id}/>
                     )
                 })}
             </div>
         </>
-    )
+    ) 
 }
 
 export default Body;
