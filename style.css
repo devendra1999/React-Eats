@@ -85,9 +85,23 @@ body {
     object-fit: cover ;
 }
 
-.shimmer {
+.shimmer-card {
     padding-top: 5rem;
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    margin: 10px;
+    background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1s infinite linear;
 }
+
+@keyframes shimmer {
+    to {
+       background-position-x: 0%
+    }
+ }
 
 .search-error{
     padding-top: 5rem;

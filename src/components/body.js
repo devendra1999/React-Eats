@@ -48,10 +48,7 @@ const Body = () => {
                 <button
                     className="search-button"
                     onClick={() => {
-                        //filter data
                         const data = filterData(searchText, restaurants)
-                        //update the restaurant list
-                        console.log(data)
                         setFilteredRestaurants(data)    
                     }}>Search</button>
             </div>
