@@ -1,4 +1,4 @@
-import { IMG_CDN } from '../utils/constants'
+import { IMG_CDN_URL } from '../utils/constants'
 
 //config driven UI
 const RestaurantCard = ({cloudinaryImageId, 
@@ -10,7 +10,7 @@ const RestaurantCard = ({cloudinaryImageId,
 
     return (
         <div className="card"> 
-            <img src ={IMG_CDN+cloudinaryImageId} />
+            <img src ={IMG_CDN_URL + cloudinaryImageId} />
             <h2>{name}</h2>
             <h3>{cuisines}</h3>
             <h4>{sla.lastMileTravel} kms| {avgRating} | {costForTwo}</h4>

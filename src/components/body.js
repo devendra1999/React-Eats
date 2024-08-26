@@ -2,6 +2,7 @@ import RestaurantCard from "./restaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './shimmer';
 import {API_FETCH_RESTAURANTS} from '../utils/constants'
+import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurants) {
     const filterData = restaurants.filter((restaurant) => {
@@ -55,7 +56,12 @@ const Body = () => {
             <div className="restaurant-list">
                 {filteredRestaurants.map((restaurant) => {
                     return (
-                    <RestaurantCard {...restaurant.info} key = {restaurant.info.id}/>
+                        <Link 
+                            to = {"/restaurant/" + restaurant.info.id}
+                            key = {restaurant.info.id}
+                        >
+                            <RestaurantCard {...restaurant.info}/>
+                    </Link>
                     )
                 })}
             </div>

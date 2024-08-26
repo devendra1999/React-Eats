@@ -108,6 +108,17 @@ body {
     font-weight: lighter;
 }
 
-.footer {
-    
+.menu {
+    display: flex;
+}
+
+.menu .menu-items {
+    padding-top: .25rem;
+}
+
+.menu .restaurant-logo{
+    min-width: 700px;
+    max-height: 300px;
+    min-height: 300px;
+    object-fit: cover;
 }
