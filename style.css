@@ -1,6 +1,7 @@
 body {
     font-family: Helvetica ;
     font-weight: bold;
+    padding: 5rem 4rem 4rem 4rem;
 }
 
 .header {
@@ -41,23 +42,22 @@ body {
     padding-right: 6rem;
 }
 
-.nav-items > ul > li {
+.nav-items > ul > .tags {
     padding: 20px; 
+    text-decoration: none;
+    color: black;
 }
 
-.nav-items > ul > li:hover {
+.nav-items > ul :hover {
     transform: scale(1.1);
 }
 
 .search-container {
-    padding-top: 6rem;
-    padding-left: 4rem;
     display: flex;
     flex-wrap: wrap;
 }
 
 .restaurant-list {
-    padding: 1rem 4rem 4rem 4rem;
     display: flex;
     flex-wrap: wrap;
 }
