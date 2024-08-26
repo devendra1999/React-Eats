@@ -1,3 +1,5 @@
+import { IMG_CDN } from '../utils/constants'
+
 //config driven UI
 const RestaurantCard = ({cloudinaryImageId, 
                         name, 
@@ -8,7 +10,7 @@ const RestaurantCard = ({cloudinaryImageId,
 
     return (
         <div className="card"> 
-            <img src ={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} />
+            <img src ={IMG_CDN+cloudinaryImageId} />
             <h2>{name}</h2>
             <h3>{cuisines}</h3>
             <h4>{sla.lastMileTravel} kms| {avgRating} | {costForTwo}</h4>
