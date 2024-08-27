@@ -1,10 +1,10 @@
-Stage 1. Created app layout and initial design
+Stage 1. Created app layout and composed initial wireframe design
 ![alt text](./src/stageProgress/stage1.png)
 
-Stage 2. Used Cdn images, staged the initial reusable components followed scalable design and modular design architecture
+Stage 2. Used Cdn images, staged the initial reusable components followed scalable design and modular design architecture for SPA's
 ![alt text](./src/stageProgress/stage2.png)
 
-Stage 3. Mocked Swiggy's public api and updated the codebase cleaning it on the way
+Stage 3. Mocked Swiggy's public api and updated the codebase using dynamic component rendering, error handling
 ![alt text](./src/stageProgress/stage3.png)
 
 Stage 4. Integrated Swiggy's api and react-router-dom as per SPA's architecture 
