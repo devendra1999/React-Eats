@@ -43,18 +43,5 @@ class Profile extends React.Component {
     );
   }
 }
-/**
- *
- *  child constructor
- *  child render
- *  child componentDidMount
- *
- *  API call
- *  Set State
- *
- *  <UPDATE CYCLES>
- *  render
- *
- *
- */
+
 export default Profile;
