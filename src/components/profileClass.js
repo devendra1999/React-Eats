@@ -9,14 +9,16 @@ class Profile extends React.Component {
         location: "Dummy Location",
       },
     };
-    //console.log("Child - Constructor" + this.props.name);
+    console.log("Child - Constructor" + this.props.name);
   }
+
   componentDidMount() {
     this.timer = setInterval(() => {
       console.log("log event");
     }, 1000);
-    //console.log("Child - componentDidMount");
+    console.log("Child - componentDidMount");
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.count !== prevState.count) {
       //
@@ -26,13 +28,14 @@ class Profile extends React.Component {
     }
     console.log("Component Did Update");
   }
+
   componentWillUnmount() {
     clearInterval(this.timer);
-    //console.log("ComponentWillUnmount");
+    console.log("ComponentWillUnmount");
   }
   render() {
     const { count } = this.state;
-    //console.log("Child - render" + this.props.name);
+    console.log("Child - render" + this.props.name); 
     return (
       <div>
         <h1> Profile Class Component </h1>
