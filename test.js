@@ -1,63 +1,41 @@
 // Interview Questions for FE role
 
-// const button = document.getElementById('button');
+//frequency of fruits
+/*
+const fruits = ['apple', 'banana', 'apple','apple', 'banana', 'apple'];
 
-// const divs = document.querySelectorAll('div');
+const uniqueList = fruits.reduce ((acc, curr) => {
+        if(acc[curr]){
+            acc[curr] +=1;
+        } else {
+            acc[curr] = 1;
+        }
+        return acc
+}, [])
 
-// divs.forEach( div => {
-//     div.addEventListener('click', ()=> {
-//         console.log('clicked' + div)
-//     })
-// })
+*/
 
-// const arr = [1,2,3,4,5,6,7,8]
+/*      OUTPUT BASED QUEST    */
+/*
+console.log('start');
 
-// const even = arr.filter( num => {
-//     if(num %2 === 0) return num;
-// })
+const promise1 = Promise.resolve().then(() => {
+  console.log('promise1');
+  const timer2 = setTimeout(() => {
+    console.log('timer2')
+  }, 0)
+});
 
-// const fruits = ['apple', 'banana', 'apple','apple', 'banana', 'apple'];
+const timer1 = setTimeout(() => {
+  console.log('timer1')
+  const promise2 = Promise.resolve().then(() => {
+    console.log('promise2')
+  })
+}, 0)
 
-// const uniqueList = fruits.reduce ((acc, curr) => {
-//         if(acc[curr]){
-//             acc[curr] +=1;
-//         } else {
-//             acc[curr] = 1;
-//         }
-//         return acc
-// }, [])
+console.log('end');
 
-// button.addEventListener('click', () => {
-//     console.log('clicked')
-// })
-
-// let sortArr = function(arr){
-//     arr.sort();
-//     console.log(arr)
-// }
-
-// let listArr = arr.reduce( (acc, curr) => {
-//   let currentAge = curr.age;
-//   if
-// },{})
-
-// console.log('start');
-
-// const promise1 = Promise.resolve().then(() => {
-//   console.log('promise1');
-//   const timer2 = setTimeout(() => {
-//     console.log('timer2')
-//   }, 0)
-// });
-
-// const timer1 = setTimeout(() => {
-//   console.log('timer1')
-//   const promise2 = Promise.resolve().then(() => {
-//     console.log('promise2')
-//   })
-// }, 0)
-
-// console.log('end');
+*/
 
 //start
   //promise 1
@@ -65,7 +43,6 @@
   //timer2
   //timer1
 //end
-  
   
   
 // function getArrayData() {
@@ -251,27 +228,27 @@ Expected Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
   Example Input: "swiss"
   Expected Output: 'w'  
  */
-/*
-      let str = 'swiss';
+
+      // let str = 'swiss';
     
-      let res = new Map();
+      // let res = new Map();
     
-      let words = str.split('');
+      // let words = str.split('');
     
-      words.forEach((char) => {
-        if(!res.has(char)){
-          res.set(char, 1)
-        } else {
-          res.set(char, res.get(char) + 1)
-        }
-      })
+      // words.forEach((char) => {
+      //   if(!res.has(char)){
+      //     res.set(char, 1)
+      //   } else {
+      //     res.set(char, res.get(char) + 1)
+      //   }
+      // })
     
-      res.forEach((char, count) => {
-        if(char === 1){
-          console.log(count); // w, i
-        }
-      })
-*/
+      // res.forEach((char, count) => {
+      //   if(char === 1){
+      //     console.log(count); // w, i
+      //   }
+      // })
+
 
 /*
       let str = 'swiss';
@@ -299,3 +276,143 @@ Expected Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 */
 
 
+/*
+  Given two arrays, find the common elements using a Map.
+  Example Input: [1, 2, 2, 3] and [2, 3, 4]
+  Expected Output: [2, 3]
+*/
+/*
+let ar1 = [1, 2, 2, 3] ;
+let ar2 = [2, 3, 4];
+
+let map1 = new Map();
+
+let res = []
+
+ar1.forEach(num => map1.set(num,true))
+
+ar2.forEach(num => {
+  if(map1.has(num)){
+    res.push(num);
+    map1.delete(num) // avoid duplicate values
+  }
+})
+
+console.log(res);
+
+*/
+
+/*
+let ar = [
+  { id: 1, managerId: null },
+  { id: 2, managerId: 1 },
+  { id: 3, managerId: 1 },
+  { id: 4, managerId: 2 }
+];
+
+let res = new Map();
+
+ar.forEach(( employee) => {
+  const {id, managerId} = employee;
+  if(res.has(managerId)){
+    res.get(managerId).push(id);
+  } else {
+    res.set(managerId, [id])
+  }
+})
+
+console.log(Object.fromEntries(res));
+*/
+
+/*
+   Implement a simple cache using Map that stores data for a fixed amount of time. 
+   Use setTimeout to expire items in the cache.
+   Task: Create functions to add items to the cache, retrieve items, and check if an item is expired.
+*/
+
+// class Cache {
+//   constructor(timeout) {
+//     this.cache = new Map();
+//     this.timeout = timeout;
+//   }
+
+//   set(key, value) {
+//     if (this.cache.has(key)) {
+//       clearTimeout(this.cache.get(key).timeoutId);
+//     }
+
+//     const timeoutId = setTimeout(() => {
+//       this.cache.delete(key);
+//     }, this.timeout);
+
+//     this.cache.set(key, { value, timeoutId });
+//   }
+
+//   get(key) {
+//     const item = this.cache.get(key);
+//     return item ? item.value : null;
+//   }
+
+//   has(key) {
+//     return this.cache.has(key);
+//   }
+// }
+
+// Test
+// const cache = new Cache(5000); // 5 seconds timeout
+// cache.set('a', 100);
+// console.log(cache.get('a')); // Output: 100
+// setTimeout(() => console.log(cache.get('a')), 6000); // Output: null (after 6 seconds)
+
+
+
+/*              Order Preservation          */
+
+// function processActions(actionMap) {
+//   actionMap.forEach((value, key) => {
+//     console.log(`Processing action: ${key} -> ${value}`);
+//   });
+// }
+
+// // Test
+// const actions = new Map();
+// actions.set('login', 'User logged in');
+// actions.set('view', 'User viewed page');
+// actions.set('logout', 'User logged out');
+
+// processActions(actions);
+
+// // Output:
+// // Processing action: login -> User logged in
+// // Processing action: view -> User viewed page
+// // Processing action: logout -> User logged out
+
+
+
+
+/*                           Handling Complex Keys
+Use Map to store user sessions where keys are user objects and values are session tokens. 
+Handle scenarios where different user objects representing the same user (but not identical objects),
+ should still map to the same session.
+Example Task: Write a function that normalizes user objects (e.g., by id) to ensure the correct mapping.
+*/
+
+  // const sessionMap = new Map();
+
+  // function normalizeUser(user){
+  //   return user.id;
+  // };
+
+  // function addSession(user, token){
+  //   sessionMap.set(normalizeUser(user), token)
+  // };
+
+  // function getSession(user) {
+  //   return sessionMap.get(normalizeUser(user));
+  // }
+
+  // const user1 = {id: 1, name: 'dev'};
+  // const user2 = {id: 1, name: 'dev clone'};
+
+  // addSession(user1, 'token123');
+  // console.log(getSession(user2))
