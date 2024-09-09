@@ -84,7 +84,6 @@
 //     console.log(arr[index]());
 // }
   
-//   // 1 ,2 ,3, 4, 5
 //   let arr = [1,2,3,4]
 // Array.prototype.myReduce = function(func, initialVal){
 //   let arr = Object(this);
@@ -121,6 +120,12 @@
 //     studentScores.delete(name);
 // }
 
+/*Create a Map that stores the names of students and their scores. Write functions to:
+Add a new student and score.
+Update the score of an existing student.
+Retrieve the score of a student.
+Delete a student from the map.*/
+
 // newStudent('Manish', 99);
 // console.log(studentScores);
 // newStudent('Piyush', 67);
@@ -153,7 +158,9 @@
 
 // console.log(Object.fromEntries(desiredArr));
 
-// flatten an array without inbuilt methods
+
+
+/* flatten an array without inbuilt methods */
 
 // const flatten = (arr) => {
 //   const result = [];
@@ -170,11 +177,125 @@
 // const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
 // console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-const arr =[1, 2, 2, 3, 3, 3, 4];
 
-const res = new Map();
 
-arr.forEach((num) => {
+/*  Given an array of numbers, use a Map to count the frequency of each number.
+    Return the number that appears the most frequently.*/
+
+// const arr =[1, 2, 2, 3, 3, 3, 4];
+
+// const res = new Map();
+
+// let maxCount = 0;
+
+// let mostFreq; 
+
+// arr.forEach((num) => {
+//   let count = res.get(num) + 1 || 1 ;
+//   res.set(num, count);
   
-})
+//   if(res.get(num) > maxCount){
+//       maxCount = res.get(num);
+//       mostFreq = num;
+//   }
+// })
   
+// console.log(Object.fromEntries(res));
+// console.log(mostFreq);
+
+
+
+/* Given an array of strings, group the anagrams together using a Map.
+Example Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+Expected Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]] 
+*/
+
+// let arr = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// let res = new Map();
+
+// arr.forEach((word) => {
+//   const sortedWord = [...word].sort().join('');
+//   if(!res.has(sortedWord)){
+//           res.set(sortedWord, [])  
+//   }
+//   res.get(sortedWord).push(word);
+// })
+
+// console.log(Array.from(res.values()))
+
+
+/* 
+  Write a function that takes a string paragraph and counts the occurrences of each word using a Map. 
+  Ignore punctuation and case sensitivity.
+  Example Input: "Hello, world! Hello world."
+  Expected Output: { "hello": 2, "world": 2 }
+*/
+
+// let str = 'Hello, world! Hello world';
+
+// let res = new Map();
+
+// const keys = str.toLowerCase().replace(/[^\w\s]/g,'').split(/\s+/);
+
+// keys.forEach((word) => {
+//     let count = res.get(word) + 1 || 1;
+//     res.set(word, count);
+// })
+
+// console.log(Object.fromEntries(res))
+
+
+ /*
+  Given a string, use a Map to find the count of each character and return the first character that appears only once.
+  Example Input: "swiss"
+  Expected Output: 'w'  
+ */
+/*
+      let str = 'swiss';
+    
+      let res = new Map();
+    
+      let words = str.split('');
+    
+      words.forEach((char) => {
+        if(!res.has(char)){
+          res.set(char, 1)
+        } else {
+          res.set(char, res.get(char) + 1)
+        }
+      })
+    
+      res.forEach((char, count) => {
+        if(char === 1){
+          console.log(count); // w, i
+        }
+      })
+*/
+
+/*
+      let str = 'swiss';
+    
+      let res = new Map();
+    
+      let words = str.split('');
+    
+      words.forEach((char) => {
+        if(!res.has(char)){
+          res.set(char, 1)
+        } else {
+          res.set(char, res.get(char) + 1)
+        }
+      })
+      
+      const obj = Object.fromEntries(res);
+    
+    for(const [key, value] of Object.entries(obj)){
+        if(value === 1){
+            console.log(key);
+            break;
+        }
+    }
+*/
+
+
