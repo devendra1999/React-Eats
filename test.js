@@ -416,3 +416,45 @@ Example Task: Write a function that normalizes user objects (e.g., by id) to ens
 
   // addSession(user1, 'token123');
   // console.log(getSession(user2))
+
+//   function outer() {
+//     let a = 10;
+//     function inner(){
+//         console.log('a = ', a);
+//         let a = 20;
+//     }
+//     inner();
+// }
+// outer();
+
+// console.log(1)
+// setTimeout(() => console.log(2))
+// new Promise(() =>console.log(3))
+// console.log(4)
+
+
+// console.log('1')
+// setTimeout(() => console.log('2'))
+// new Promise((res, rej) => {
+//  console.log('3');
+//  res(() => console.log('4'))
+// }).then(resolvedValue => {
+//  resolvedValue();
+// });
+// console.log('5')
+
+
+// (function abc() {
+// var a=10;
+// })();
+// console.log(a);
+
+// function outer() {
+//   let a = 10;
+//   function inner(){
+//       console.log('a = ', a);
+//       let a = 20;
+//   }
+//   inner();
+// }
+// outer();
