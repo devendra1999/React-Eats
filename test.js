@@ -458,3 +458,75 @@ Example Task: Write a function that normalizes user objects (e.g., by id) to ens
 //   inner();
 // }
 // outer();
+
+// var isAnagram = function(s, t) {
+//   if (s.length !== t.length) return false;
+
+//   let mp = new Map();
+  
+//   for (const char of s) {
+//       mp.set(char, (mp.get(char) || 0) + 1);
+//   }
+
+//   for (const char of t) {
+//       if (!mp.has(char) || mp.get(char) === 0) {
+//           return false; 
+//       }
+//       mp.set(char, mp.get(char) - 1);
+//   }
+
+//   return true; 
+// };
+
+// console.log(isAnagram("listen", "silent")); // Output: true
+// console.log(isAnagram("hello", "bello"));   // Output: false
+// console.log(isAnagram("abc", "cba"));       // Output: true // Output: false
+
+// function countSubstringsWithKDistinct(s, k) {
+//     let n = s.length;
+//     let count = 0;
+
+//     // Helper function to count substrings with at most 'k' distinct characters
+//     function countAtMostKDistinct(k) {
+//         let left = 0, right = 0, distinctCount = 0;
+//         let freqMap = new Map();
+//         let subCount = 0;
+
+//         while (right < n) {
+//             // Expand the window by including the character at `right`
+//             const charRight = s[right];
+//             freqMap.set(charRight, (freqMap.get(charRight) || 0) + 1);
+
+//             // If this character is new to the window, increment distinctCount
+//             if (freqMap.get(charRight) === 1) {
+//                 distinctCount++;
+//             }
+
+//             // Shrink the window if the number of distinct characters exceeds 'k'
+//             while (distinctCount > k) {
+//                 const charLeft = s[left];
+//                 freqMap.set(charLeft, freqMap.get(charLeft) - 1);
+
+//                 // If the count of a character goes to zero, it's no longer in the window
+//                 if (freqMap.get(charLeft) === 0) {
+//                     freqMap.delete(charLeft);
+//                     distinctCount--;
+//                 }
+//                 left++;
+//             }
+
+//             // Add the number of substrings ending at `right` with at most 'k' distinct characters
+//             subCount += right - left + 1;
+
+//             // Move the right pointer to expand the window
+//             right++;
+//         }
+//         return subCount;
+//     }
+
+//     // Count substrings with exactly 'k' distinct characters
+//     return countAtMostKDistinct(k) - countAtMostKDistinct(k - 1);
+// }
+
+// // Example usage:
+// console.log(countSubstringsWithKDistinct("abcba", 2)); // Output: 7
