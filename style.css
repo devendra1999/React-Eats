@@ -68,6 +68,8 @@ body {
     padding: 10px;
     margin: 10px;
     background-color: white;
+    text-decoration: none;
+    color: black;
 }
 
 .card:hover {

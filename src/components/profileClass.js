@@ -2,16 +2,18 @@ import React from "react";
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    // Create State
+    // Create State -> constructor bcz it 
+    // called defua-lt first when class is created
     this.state = {
       userInfo: {
-        name: "Dummy Name",
-        location: "Dummy Location",
+        name: "Dev Name",
+        location: "Home Location",
       },
     };
     console.log("Child - Constructor" + this.props.name);
   }
 
+  // best place to make api call in react class component
   componentDidMount() {
     this.timer = setInterval(() => {
       console.log("log event");

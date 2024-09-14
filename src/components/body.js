@@ -56,7 +56,7 @@ const Body = () => {
             <div className="restaurant-list">
                 {filteredRestaurants.map((restaurant) => {
                     return (
-                        <Link 
+                        <Link style={{ textDecoration: 'none' }}
                             to = {"/restaurant/" + restaurant.info.id}
                             key = {restaurant.info.id}
                         >
