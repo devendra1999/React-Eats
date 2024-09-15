@@ -1,9 +1,9 @@
 import React from "react";
-class Profile extends React.Component {
+class ProfileClass extends React.Component {
   constructor(props) {
     super(props);
     // Create State -> constructor bcz it 
-    // called defua-lt first when class is created
+    // called defuslt first when class is created
     this.state = {
       userInfo: {
         name: "Dev Name",
@@ -23,16 +23,17 @@ class Profile extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.count !== prevState.count) {
-      //
+      // like useEffect dependency logic
     }
     if (this.state.count2 !== prevState.count2) {
-      // code
+      // alike useEffect dependency logic
     }
     console.log("Component Did Update");
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    // clear interval since no default unmounting
+    clearInterval(this.timer); 
     console.log("ComponentWillUnmount");
   }
   render() {
@@ -49,4 +50,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default ProfileClass;
